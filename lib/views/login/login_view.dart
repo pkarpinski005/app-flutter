@@ -24,11 +24,15 @@ class LoginView extends StatelessWidget {
                 SizedBox(height: 21),
                 _signIn,
                 SizedBox(height: 46),
-                BasicTextFromField(initialValue: 'ttt'),
+                BasicTextFromField(initialValue: 'Email or User Name'),
                 SizedBox(height: 40),
-                BasicTextFromField(initialValue: 'adsd'),
+                BasicTextFromField(initialValue: 'Password'),
                 ElevatedButton(
-                  child: const Text('Open route'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppColors.pinkColor,
+                    minimumSize: const Size(500, 50),
+                  )  ,
+                  child: const Text('Open route') ,
                   onPressed: () {
                     Navigator.push(
                       context,
