@@ -24,23 +24,36 @@ class LoginView extends StatelessWidget {
                 SizedBox(height: 21),
                 _signIn,
                 SizedBox(height: 46),
-                BasicTextFromField(initialValue: 'ttt'),
+                BasicTextFromField(initialValue: 'Email or User Name'),
                 SizedBox(height: 40),
-                BasicTextFromField(initialValue: 'adsd'),
+                BasicTextFromField(initialValue: 'Password'),
+                SizedBox(height: 30,),
+                Align(alignment: Alignment.centerRight,
+                  child: Text(AppTexts.ForgetPassword, style: TextStyle(fontSize: 20, color: AppColors.purpleColor,fontWeight: FontWeight.w700,)),
+                ),
+                SizedBox(height: 30,),
                 ElevatedButton(
-                  child: const Text('Open route'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppColors.pinkColor,
+                    minimumSize: const Size(500, 50),
+                  )  ,
+                  child: const Text('Open route') ,
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute<void>(
-                        builder: (context) => const RegisterView(),
-                      ),
-                    );
+
                   },
                 ),
                 GestureDetector(
-                    onTap: () => print('aa'),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute<void>(
+                          builder: (context) => const RegisterView(),
+                        ),
+                      );
+                    },
+
                     child: Text(AppTexts.signIn, style: TextStyle(fontSize: 30)),
+
                 ),
               ],
             ),
@@ -64,3 +77,6 @@ Widget get _signIn {
     ),
   );
 }
+
+
+
